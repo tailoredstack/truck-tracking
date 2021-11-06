@@ -2,7 +2,8 @@
     <nav class="sidebar-nav">
         <ul class="nav">
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.content') }}</li>
-            {{-- Do not delete me :) I'm used for auto-generation menu items --}}
+            <li class="nav-item"><a class="nav-link" href="{{ url('admin/trucks') }}"><i class="nav-icon icon-compass"></i> {{ trans('admin.truck.title') }}</a></li>
+           {{-- Do not delete me :) I'm used for auto-generation menu items --}}
 
             @role('Administrator')
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.settings') }}</li>
