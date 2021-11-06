@@ -30,5 +30,42 @@ return [
         ],
     ],
 
+    'truck' => [
+        'title' => 'Truck',
+
+        'actions' => [
+            'index' => 'Truck',
+            'create' => 'New Truck',
+            'show' => 'Show Truck',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            
+        ],
+    ],
+
+    'truck' => [
+        'title' => 'Truck',
+
+        'actions' => [
+            'index' => 'Truck',
+            'create' => 'New Truck',
+            'show' => 'Show Truck',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'color' => 'Color',
+            'manufacturer' => 'Manufacturer',
+            'no_of_wheels' => 'No of wheels',
+            'plate_no' => 'Plate no',
+            'type' => 'Type',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

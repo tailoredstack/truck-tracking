@@ -21358,3 +21358,7 @@ pre {
   background-color: #333;
   color: whitesmoke !important;
 }
+
+.main.main-guest {
+  margin-left: 0 !important;
+}
