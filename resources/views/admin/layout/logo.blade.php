@@ -2,5 +2,5 @@
     {{-- You may use plain text as a logo instead of image --}}
 
     {{--Text Logo--}}
-    SBO Voting System
+    Truck Fleet Management
 </a>
