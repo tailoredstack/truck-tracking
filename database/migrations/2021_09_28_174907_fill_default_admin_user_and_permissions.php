@@ -41,7 +41,7 @@ class FillDefaultAdminUserAndPermissions extends Migration
     /**
      * @var string
      */
-    protected $password = 'K0SnyPR3Za';
+    protected $password = 'password';
 
     /**
      * FillDefaultAdminUserAndPermissions constructor.
@@ -99,6 +99,15 @@ class FillDefaultAdminUserAndPermissions extends Migration
                     return $permission === 'admin.admin-user.impersonal-login';
                 }),
             ],
+            [
+                'name' => 'Admin',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission !== 'admin';
+                }),
+            ],
         ];
 
         //Add new users
@@ -115,6 +124,25 @@ class FillDefaultAdminUserAndPermissions extends Migration
                 'roles' => [
                     [
                         'name' => 'Administrator',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Cherryl',
+                'last_name' => 'Egar',
+                'email' => 'cherrylegar@gmail.com',
+                'password' => Hash::make($this->password),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Admin',
                         'guard_name' => $this->guardName,
                     ],
                 ],
@@ -164,9 +192,9 @@ class FillDefaultAdminUserAndPermissions extends Migration
                 $permissionItems = DB::table('permissions')
                     ->whereIn('name', $permissions)
                     ->where(
-                    'guard_name',
-                    $role['guard_name']
-                )->get();
+                        'guard_name',
+                        $role['guard_name']
+                    )->get();
                 foreach ($permissionItems as $permissionItem) {
                     $roleHasPermissionData = [
                         'permission_id' => $permissionItem->id,

@@ -159,22 +159,13 @@ $btn-close-opacity:          1 !default;
 $btn-close-hover-opacity:    1 !default;
 $btn-close-focus-shadow:     none !default;
 
-// Liceo
-
-$brand-primary: #F2A700;
-$brand-secondary: #8C211B;
 
 // Craftable
 
-// Colors
-$primary: $brand-secondary;
-$danger: #FE3F61;
-$success: #60CF7D;
-$warning: #F5BE30;
-$mutedText: #b9c8de;
+$mutedText: $gray-500;
 
-$sidebar-bg: $brand-primary;
-$sidebar-nav-link-active-bg: $brand-secondary;
+$sidebar-bg: $primary;
+$sidebar-nav-link-active-bg: $secondary;
 $sidebar-nav-link-active-icon-color: white;
 $pagination-hover-bg: #f3f8ff;
 
